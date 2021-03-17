@@ -10,10 +10,12 @@ module.exports = {
     new MiniCssExtractPlugin({
         filename: '[name].[contenthash].css',
         chunkFilename: '[id].[contenthash].css',
+        ignoreOrder:false,
     }),
     ],
   module: {
     rules: [
+      ...base.module.rules,
       {
         test: /\.css$/,
         use: [
